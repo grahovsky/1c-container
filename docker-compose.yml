@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  postgrespro:
+    image: grahovsky/postgrespro
+    ports:
+      - "5432:5432"
+    volumes:
+      - psql:/var/lib/pgsql
+  onec:
+    image: grahovsky/onec
+    ports:
+      - "1540-1541:1540-1541"
+      - "1560-1591:1560-1591"
+      - "1545:1545"
+    volumes:
+      - 1c-server-home:/home/usr1cv8
+      - 1c-server-logs:/var/log/1C
+    depends_on:
+      - postgrespro
+
+volumes:
+  psql:
+  1c-server-home:
+  1c-server-logs:
