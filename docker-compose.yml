@@ -8,10 +8,9 @@ services:
     volumes:
       - psql:/var/lib/pgsql
   onec:
-    # build:
-    #   context: ../onec-centos
-    #   dockerfile: Dockerfile
-    # image: onec-temp
+    build:
+      context: ../onec-centos
+      dockerfile: Dockerfile
     image: grahovsky/onec
     ports:
       - "1540-1541:1540-1541"
