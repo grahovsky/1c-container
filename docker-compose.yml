@@ -8,11 +8,16 @@ services:
     volumes:
       - psql:/var/lib/pgsql
   onec:
+    # build:
+    #   context: ../onec-centos
+    #   dockerfile: Dockerfile
+    # image: onec-temp
     image: grahovsky/onec
     ports:
       - "1540-1541:1540-1541"
       - "1560-1591:1560-1591"
       - "1545:1545"
+    tty: true
     volumes:
       - 1c-server-home:/home/usr1cv8
       - 1c-server-logs:/var/log/1C
