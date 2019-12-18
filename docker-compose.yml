@@ -6,7 +6,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - psql:/var/lib/pgsql/9.6/data
+      - psql:/var/lib/pgsql
   onec:
     build:
       context: ../onec-centos
